@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { NextIcon, PrevIcon, Slick, SlickWrapper } from "./styles";
-import ServiceCard from "../ServiceCard";
 
 export default function Slider({ settings = {}, items, ...rest }) {
 	const ref = useRef();
@@ -26,18 +25,10 @@ export default function Slider({ settings = {}, items, ...rest }) {
 			<PrevIcon onClick={handlePrev} />
 			<NextIcon onClick={handleNext} />
 			<Slick ref={ref} {...newSetting} {...rest}>
-				{items.map((item, ind) => {
-					return (
-						<ServiceCard
-							index={ind}
-							key={item.title}
-							title={item.title}
-							desc={item.desc}
-						>
-							<item.icon />
-						</ServiceCard>
-					);
-				})}
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
 			</Slick>
 		</SlickWrapper>
 	);

@@ -40,6 +40,7 @@ const common = {
 		black: "#000",
 		grey: "#A8A8A8",
 		dark: "#0F1623",
+		border: "#0a0e16",
 		light_grey: "#F4F4F4",
 		bg: "radial-gradient(50% 50% at 50% 50.68%, rgba(12, 16, 24, 0.9) 0%, #0C1018 0.01%, #141323 0.02%, #0A0D15 100%)",
 	},
