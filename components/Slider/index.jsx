@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import Slick from "react-slick";
+import { NextIcon, PrevIcon, Slick, SlickWrapper } from "./styles";
 import ServiceCard from "../ServiceCard";
 
-export default function Slider({ settings = {}, ...rest }) {
+export default function Slider({ settings = {}, items, ...rest }) {
 	const ref = useRef();
 	let defaultSetting = {
 		dots: true,
@@ -11,16 +11,34 @@ export default function Slider({ settings = {}, ...rest }) {
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		centerMode: true,
+		arrows: false,
+		padding: 40,
 	};
-	console.log(ref.current);
 	const newSetting = Object.assign(defaultSetting, settings);
+	const handleNext = () => {
+		ref.current.slickNext();
+	};
+	const handlePrev = () => {
+		ref.current.slickPrev();
+	};
 	return (
-		<Slick ref={ref} {...newSetting} {...rest}>
-			<ServiceCard />
-			<ServiceCard />
-			<ServiceCard />
-			<ServiceCard />
-			<ServiceCard />
-		</Slick>
+		<SlickWrapper>
+			<PrevIcon onClick={handlePrev} />
+			<NextIcon onClick={handleNext} />
+			<Slick ref={ref} {...newSetting} {...rest}>
+				{items.map((item, ind) => {
+					return (
+						<ServiceCard
+							index={ind}
+							key={item.title}
+							title={item.title}
+							desc={item.desc}
+						>
+							<item.icon />
+						</ServiceCard>
+					);
+				})}
+			</Slick>
+		</SlickWrapper>
 	);
 }

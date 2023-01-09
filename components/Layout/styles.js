@@ -10,12 +10,12 @@ export const Header = styled.nav`
 export const Navigation = styled.div`
 	display: flex;
 	align-items: center;
-	padding: 26px 0;
 	.nav-icons {
 		min-width: 18px;
 	}
 `;
 export const NavLink = styled(Link)`
+	font-family: "Jura";
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;

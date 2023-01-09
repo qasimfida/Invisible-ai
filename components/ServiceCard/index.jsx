@@ -1,15 +1,24 @@
-import { CardWrapper, Description, Icon, Title, Wrapper } from "./styles";
-import Image from "next/image";
-import { Icon1 } from "../Icons/service-icons";
-const ServiceCard = ({ title, description, icon, onClick, ...rest }) => {
+import { ArrowRight } from "../Icons";
+import {
+	Button,
+	CardWrapper,
+	Description,
+	Icon,
+	Title,
+	Wrapper,
+} from "./styles";
+const ServiceCard = ({ title, desc, children, onClick, ...rest }) => {
 	return (
 		<Wrapper {...rest}>
 			<CardWrapper>
-				<Icon>
-					<Icon1 />
-				</Icon>
-				<Title>{title || "title"}</Title>
-				<Description>{description || "description"}</Description>
+				<div>
+					<Icon>{children}</Icon>
+					<Title>{title || "title"}</Title>
+					<Description>{desc || "description"}</Description>
+				</div>
+				<Button>
+					<ArrowRight size={20} />
+				</Button>
 			</CardWrapper>
 		</Wrapper>
 	);

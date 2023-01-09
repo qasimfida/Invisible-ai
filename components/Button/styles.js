@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 export const StyledButton = styled.button`
+	font-family: "Jura";
+	font-weight: 700;
 	height: 44px;
 	width: ${({ size }) => (size === "xl" ? "198px" : "124px")};
 	font-size: ${({ size }) =>
