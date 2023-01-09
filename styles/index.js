@@ -18,11 +18,42 @@ body{
 svg {
     display: flex;
 }
+.h-screen {
+  height: 100vh;
+}
+.w-half {
+  width: 50%;
+}
 .text-center {
   text-align: center;
 }
+.mr-2 {
+  margin-right: 16px;
+}
+.mt-9 {
+  margin-top: 72px;
+}
+.mb-5 {
+  margin-bottom: 40px;
+}
+.mb-8 {
+  margin-bottom: 64px;
+}
+.mb-4 {
+  margin-bottom: 28px;
+}
+.mb-11 {
+  margin-bottom: 88px;
+}
+.ml-4 {
+  margin-left: 32px;
+}
 .ml-6xl {
-    margin-left: 134px;
+  margin-left: 134px;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 `;
