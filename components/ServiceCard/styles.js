@@ -59,7 +59,7 @@ export const Title = styled.h3`
 export const Description = styled.p`
 	font-family: "Jura";
 	font-weight: 300;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 19px;
 	margin: 8px auto;
 	color: ${({ theme: { colors } }) => colors.white};
