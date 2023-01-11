@@ -105,7 +105,7 @@ const HomeContainer = () => {
 				<Container>
 					<SliderWrapper>
 						<BlurBg />
-						<Slider />
+						<Slider items={services} />
 					</SliderWrapper>
 				</Container>
 			</ServiceWrapper>
