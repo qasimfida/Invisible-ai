@@ -4,11 +4,17 @@ import { NextIcon, PrevIcon, Slick, SlickWrapper } from "./styles";
 
 export default function Slider({ settings = {}, items, ...rest }) {
 	const ref = useRef();
+	let slidesToShow = 5;
+
+	if (items.length < 5) {
+	  slidesToShow = items.length;
+	}
+
 	let defaultSetting = {
 		dots: false,
 		infinite: true,
 		speed: 700,
-		slidesToShow: 5,
+		slidesToShow: slidesToShow,
 		slidesToScroll: 1,
 		centerMode: true,
 		arrows: false,
@@ -37,6 +43,7 @@ export default function Slider({ settings = {}, items, ...rest }) {
 	const handlePrev = () => {
 		ref.current.slickPrev();
 	};
+
 	return (
 		<SlickWrapper>
 			<PrevIcon onClick={handlePrev} />
