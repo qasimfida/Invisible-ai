@@ -10,6 +10,12 @@ export const Card = styled.div`
 `;
 export const SlickWrapper = styled.div`
 	position: relative;
+
+	@media(min-width: 1440px) {
+		.showOnlyFourSlides .slick-active:not(.slick-active ~ .slick-active) {
+			opacity: 0 !important;
+		}
+	}
 `;
 export const PrevIcon = styled(AngleLeft)`
 	position: absolute;

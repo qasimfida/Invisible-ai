@@ -32,29 +32,40 @@ const HomeContainer = () => {
 	var services = [
 		{
 			title: "Retail",
-			desc: "Invisible ai is a platform to early invest in Ai.",
+			desc: "Invisible ai is a pltaform to early invest in Ai.",
 			icon: Icon2,
 		},
 		{
 			title: "Finance",
-			desc: "Invisible ai is a platform to early invest in Ai.",
+			desc: "Invisible ai is a pltaform to early invest in Ai.",
 			icon: Icon1,
 		},
 		{
 			title: "Manufacturing",
-			desc: "Invisible ai is a platform to early invest in Ai.",
+			desc: "Invisible ai is a pltaform to early invest in Ai.",
 			icon: Icon3,
 		},
 		{
 			title: "Human Resources",
-			desc: "Invisible ai is a platform to early invest in Ai.",
+			desc: "Invisible ai is a pltaform to early invest in Ai.",
 			icon: Icon4,
-		}
+		},
+		{
+			title: "Manufacturing",
+			desc: "Invisible ai is a pltaform to early invest in Ai.",
+			icon: Icon3,
+		},
+		{
+			title: "Public sector",
+			desc: "Invisible ai is a pltaform to early invest in Ai.",
+			icon: Icon5,
+		},
 	];
 
-	/* while (services.length < 5) {
+	let prevItemsLength = services.length;
+	while (services.length < 5) {
 		services.push(...services);
-	} */
+	}
 
 	return (
 		<div>
@@ -100,7 +111,7 @@ const HomeContainer = () => {
 				<Container>
 					<SliderWrapper>
 						<BlurBg />
-						<Slider items={services} />
+						<Slider items={services} slideNumber={prevItemsLength}/>
 					</SliderWrapper>
 				</Container>
 			</ServiceWrapper>

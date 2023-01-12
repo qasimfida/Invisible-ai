@@ -6,6 +6,8 @@ export default function Slider({ settings = {}, items, ...rest }) {
 	const ref = useRef();
 	let slidesToShow = 5;
 
+	console.log(items.length);
+
 	if (items.length < 5) {
 	  slidesToShow = items.length;
 	}
@@ -36,6 +38,7 @@ export default function Slider({ settings = {}, items, ...rest }) {
 			},
 		],
 	};
+	
 	const newSetting = Object.assign(defaultSetting, settings);
 	const handleNext = () => {
 		ref.current.slickNext();
@@ -44,11 +47,19 @@ export default function Slider({ settings = {}, items, ...rest }) {
 		ref.current.slickPrev();
 	};
 
+	let additionalClass = "";
+
+	if (rest.slideNumber === 4) {
+		additionalClass = "showOnlyFourSlides";
+	}
+
+	console.log(slidesToShow);
+
 	return (
 		<SlickWrapper>
 			<PrevIcon onClick={handlePrev} />
 			<NextIcon onClick={handleNext} />
-			<Slick ref={ref} {...newSetting} {...rest}>
+			<Slick ref={ref} {...newSetting} {...rest} className={additionalClass}>
 				{items.map((i, ind) => {
 					return (
 						<ServiceCard key={ind + 1} {...i}>
@@ -57,6 +68,6 @@ export default function Slider({ settings = {}, items, ...rest }) {
 					);
 				})}
 			</Slick>
-		</SlickWrapper>
+		</SlickWrapper>	
 	);
 }
