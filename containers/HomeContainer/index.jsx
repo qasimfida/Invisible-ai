@@ -49,22 +49,12 @@ const HomeContainer = () => {
 			title: "Human Resources",
 			desc: "Invisible ai is a platform to early invest in Ai.",
 			icon: Icon4,
-		},
-		{
-			title: "Manufacturing",
-			desc: "Invisible ai is a platform to early invest in Ai.",
-			icon: Icon3,
-		},
-		{
-			title: "Public sector",
-			desc: "Invisible ai is a platform to early invest in Ai.",
-			icon: Icon5,
-		},
+		}
 	];
 
-	while (services.length < 5) {
+	/* while (services.length < 5) {
 		services.push(...services);
-	}
+	} */
 
 	return (
 		<div>
