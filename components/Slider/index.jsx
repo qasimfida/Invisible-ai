@@ -12,12 +12,17 @@ export default function Slider({ settings = {}, items, ...rest }) {
 	  slidesToShow = items.length;
 	}
 
+	while (items.length < 20) {
+		items.push(...items);
+	}
+
 	let defaultSetting = {
 		dots: false,
 		infinite: true,
 		speed: 700,
 		slidesToShow: slidesToShow,
 		slidesToScroll: 1,
+		initialSlide: Math.floor(items.length/2),
 		centerMode: true,
 		arrows: false,
 		padding: 40,
@@ -54,6 +59,8 @@ export default function Slider({ settings = {}, items, ...rest }) {
 	}
 
 	console.log(slidesToShow);
+
+
 
 	return (
 		<SlickWrapper>
