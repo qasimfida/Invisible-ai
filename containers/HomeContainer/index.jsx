@@ -63,9 +63,6 @@ const HomeContainer = () => {
 	];
 
 	let prevItemsLength = services.length;
-	while (services.length < 5) {
-		services.push(...services);
-	}
 
 	return (
 		<div>
